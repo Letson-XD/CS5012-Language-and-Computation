@@ -1,0 +1,55 @@
+# SENTENCE STRUCTURES
+
+S -> NP[NUM=?n] VP[NUM=?n, TENSE=?t, SUBCAT=nil]
+S -> NP[NUM=?n] ADV VP[NUM=?n, TENSE=?t, SUBCAT=nil]
+S -> QP[NUM=?n] NP[NUM=?n] VP[NUM=?n, TENSE=?t, SUBCAT=nil]
+
+# NOUN PHASE
+NP[NUM=?n] -> PN[NUM=?n] | DET N[NUM=?n]
+NP[NUM=pl] -> NP CONJ NP
+
+# VERB PHASE
+VP[NUM=?n, TENSE=?t, SUBCAT=?args] -> V[NUM=?n, TENSE=?t, SUBCAT=?args]
+VP[SUBCAT=nil] -> VP CONJ VP
+VP[NUM=?n, TENSE=?t, SUBCAT=?args] -> V[NUM=?n, TENSE=?t, SUBCAT=?args] S
+VP[NUM=?n, TENSE=?t, SUBCAT=?args] -> V[NUM=?n, TENSE=?t] N
+VP[SUBCAT=nil] -> V[NUM=?n, TENSE=?t, SUBCAT=?args] NP[NUM=?n]
+VP[NUM=?n, TENSE=?t, SUBCAT=?args] -> V[NUM=?n, TENSE=?t] NP[NUM=?n] N[NUM=?n]
+VP[NUM=?n, TENSE=?t, SUBCAT=?args] -> V[NUM=?n, TENSE=?t] NP PP[NUM=?n]
+VP[NUM=?n, TENSE=?t, SUBCAT=?args] -> V N[NUM=?n] PP
+VP[NUM=?n, TENSE=?t, SUBCAT=?args] -> V N[NUM=?n] PP[NUM=?n] PP[NUM=?n]
+
+# PREPOSITIONAL PHASE
+PP[NUM=?n] -> PREP NP[NUM=?n]
+PP[NUM=?n] -> PREP N[NUM=?n]
+
+# QUESTION PHASE
+QP[NUM=?n] -> WH | WH AUX[NUM=?n]
+
+
+V[TENSE = present, NUM = sg, SUBCAT = [ HEAD= np,TAIL = nil ]]-> 'drinks' | 'invents' | 'feeds' | 'eats'
+V[TENSE = past, NUM = ?n, SUBCAT = [ HEAD= np,TAIL = nil ]] -> 'ate' | 'feed'
+V[TENSE = present, NUM = pl, SUBCAT = [ HEAD= np,TAIL = nil ]]-> 'invent' | 'thinks'
+V[TENSE = present, NUM = sg, SUBCAT = [HEAD = np,TAIL = [HEAD = np, TAIL = nil]]]-> 'serves'
+V[TENSE = present, NUM = sg, SUBCAT = [ HEAD= np,TAIL = [HEAD = pp, TAIL = nil]]]-> 'puts'
+V[TENSE = past, NUM = ?n, SUBCAT = nil]-> 'barks' | 'eat' | 'bark'
+V[TENSE = present, NUM = sg, SUBCAT = nil]-> 'barked' | 'think'
+
+CONJ -> 'and'
+
+DET -> 'the'
+
+WH -> 'when' | 'what' | 'whom' | 'where' | 'why' | 'how'
+
+PREP -> 'in' | 'after'
+
+AUX[NUM = sg] -> 'does'
+AUX[NUM = pl] -> 'do'
+
+ADV -> 'often' | 'seldom'
+
+PN[NUM=sg] -> 'Wallace' | 'Gromit'
+
+
+N[NUM = sg] -> 'cheese' | 'dinner' | 'kitchen'
+N[NUM = pl] -> 'contraptions'
