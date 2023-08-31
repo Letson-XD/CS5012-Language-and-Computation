@@ -8,4 +8,4 @@ The objective of this project was to produce a natural language processing model
 
 ## A2 - Grammar Engineering
 
-The objective of this assignment was to design a grammatical model that parses a limited subset of English, consisting of eight valid sentences and three invalid sentences. Initially, context-free grammar was developed to define rules for parsing sentences. Then, the grammar was refined to become unification grammar which incorporates more rigorous rules to prevent parsing of invalid sentences. 
+The objective of this project was to design a grammatical model that parses a limited subset of English, consisting of eight valid sentences and three invalid sentences. Initially, context-free grammar was developed to define rules for parsing sentences. Then, the grammar was refined to become unification grammar which incorporates more rigorous rules to prevent parsing of invalid sentences. 
